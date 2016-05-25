@@ -1,0 +1,34 @@
+{%- extends 'base.html' -%}
+
+{% block head %}
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='sorting.js')}}"></script>
+{% endblock head %}
+
+{% block content %}
+  <h1>
+    Sorting
+  </h1>
+
+  <p>
+    This URL can be used to sort a list of query parameters. Send a
+    POST request along with a comma-separated list of numbers in the
+    "values" parameter to get a sorted list back.
+  </p>
+  <p>
+    You can try this with the form below.
+
+    <form action="/sorting" method="POST">
+      <input type="text" name="values" size=50></input>
+      <input type="submit"></input>
+    </form>
+  </p>
+  <p>
+    You can also try the interactive version of the form here.
+
+    <form>
+      <input type="text" id="values" size=50></input>
+      <input type="button" value="Sort" onclick="run_sort()"></input>
+    </form>
+  </p>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{%- extends 'base.html' -%}
+
+{% block head %}
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='sorting.js')}}"></script>
+{% endblock head %}
+
+{% block content %}
+  <h1>
+    Averaging
+  </h1>
+
+  <p>
+    This URL can be used to calculate the average of parameters. Send a
+    POST request along with a comma-separated list of numbers in the
+    "values" parameter to get the average.
+  </p>
+  
+  <p>
+    You can try this with the form below.
+
+    <form action="/averaging" method="POST">
+      <input type="text" name="values" size=50></input>
+      <input type="submit"></input>
+    </form>
+  </p>
+
+ {% endblock content %}    
